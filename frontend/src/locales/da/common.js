@@ -144,7 +144,7 @@ const TRANSLATIONS = {
     user3: "Wow, det lyder fantastisk, lad mig prøve det med det samme!",
     part6: "Hav det sjovt!",
     starOnGitHub: "",
-    contact: "Kontakt Mintplex Labs",
+    contact: "Kontakt nytte",
   },
   "new-workspace": {
     title: "Nyt arbejdsområde",

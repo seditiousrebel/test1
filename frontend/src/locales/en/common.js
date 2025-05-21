@@ -133,7 +133,7 @@ const TRANSLATIONS = {
 
   welcomeMessage: {
     part1:
-      "Welcome to nytte   ', an AI tool by Mintplex Labs that turns anything into a trained chatbot you can query and chat with. nytte   a BYOK (bring-your-own-keys) software so there is no subscription, fee, or charges for this software outside of the services you want to use with it.",
+      "Welcome to nytte   ', an AI tool b turns anything into a trained chatbot you can query and chat with. nytte a BYOK (bring-your-own-keys) software so there is no subscription, fee, or charges for this software outside of the services you want to use with it.",
     part2:
       "nytte   is the easiest way to put powerful AI products like OpenAi, GPT-4, LangChain, PineconeDB, ChromaDB, and other services together in a neat package with no fuss to increase your productivity by 100x.",
     part3:
@@ -150,7 +150,7 @@ const TRANSLATIONS = {
     user3: "Wow, this sounds amazing, let me try it out already!",
     part6: "Have Fun!",
     starOnGitHub: "",
-    contact: "Contact Mintplex Labs",
+    contact: "Contact nytte",
   },
 
   "main-page": {
