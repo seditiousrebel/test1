@@ -1,23 +1,18 @@
 const { SystemSettings } = require("../models/systemSettings");
+const { CommunityHub } = require("../models/communityHub"); // Import CommunityHub
 
 function utilEndpoints(app) {
   if (!app) return;
 
   app.get("/utils/metrics", async (_, response) => {
     try {
-      const metrics = {
-        online: true,
-        version: getGitVersion(),
-        mode: (await SystemSettings.isMultiUserMode())
-          ? "multi-user"
-          : "single-user",
-        vectorDB: process.env.VECTOR_DB || "lancedb",
-        storage: await getDiskStorage(),
-      };
-      response.status(200).json(metrics);
+      // Hijack this endpoint to call fetchExploreItems
+      const result = await CommunityHub.fetchExploreItems();
+      response.status(200).json(result); // Send the result (which includes the error if any)
     } catch (e) {
-      console.error(e);
-      response.sendStatus(500).end();
+      // This catch might not be reached if the error is handled within fetchExploreItems
+      console.error("Error in /utils/metrics (hijacked):", e);
+      response.status(500).json({ error: e.message, detail: JSON.stringify(e) });
     }
   });
 }
