@@ -21,15 +21,35 @@ export default {
         "360": "360deg"
       },
       colors: {
+        // New brand color palette based on #957fef
+        brand: {
+          DEFAULT: '#957FEF',
+          50: '#F0EEFD',
+          100: '#E1DBFC',
+          200: '#C9BFF9',
+          300: '#B1A3F6',
+          400: '#9F8CF3',
+          500: '#957FEF',
+          600: '#7D65D5',
+          700: '#654DBB',
+          800: '#4E35A1',
+          900: '#371D87',
+          950: '#2A1265',
+        },
+
         "black-900": "#141414",
-        accent: "#3D4147",
+        // Updated accent to use the new brand color
+        accent: 'theme("colors.brand.500")', // Was #3D4147
         "sidebar-button": "#31353A",
         sidebar: "#25272C",
-        "historical-msg-system": "rgba(255, 255, 255, 0.05);",
+        // Corrected rgba value
+        "historical-msg-system": "rgba(255, 255, 255, 0.05)",
         "historical-msg-user": "#2C2F35",
-        outline: "#4E5153",
-        "primary-button": "var(--theme-button-primary)",
-        "cta-button": "var(--theme-button-cta)",
+        // Updated outline to use a brand color for better focus visibility
+        outline: 'theme("colors.brand.400")', // Was #4E5153
+        // Updated buttons to use brand color as a fallback if CSS vars are not set
+        "primary-button": "var(--theme-button-primary, theme('colors.brand.500'))",
+        "cta-button": "var(--theme-button-cta, theme('colors.brand.600'))",
         secondary: "#2C2F36",
         "dark-input": "#18181B",
         "mobile-onboarding": "#2C2F35",
@@ -38,7 +58,7 @@ export default {
         description: "#D2D5DB",
         "x-button": "#9CA3AF",
         royalblue: "#065986",
-        purple: "#4A1FB8",
+        purple: "#4A1FB8", // Existing purple, distinct from brand
         magenta: "#9E165F",
         danger: "#F04438",
         error: "#B42318",
@@ -47,7 +67,7 @@ export default {
         darker: "#F4F4F4",
         teal: "#0BA5EC",
 
-        // Generic theme colors
+        // Generic theme colors (using CSS variables - this structure is excellent!)
         theme: {
           bg: {
             primary: 'var(--theme-bg-primary)',
@@ -106,7 +126,7 @@ export default {
             "bg-card": 'var(--theme-home-bg-card)',
             "bg-button": 'var(--theme-home-bg-button)',
             border: 'var(--theme-home-border)',
-            "button-primary": 'var(--theme-home-button-primary)',
+            "button-primary": 'var(--theme-home-button-primary)', // Uses --theme-button-primary CSS var by default
             "button-primary-hover": 'var(--theme-home-button-primary-hover)',
             "button-secondary": 'var(--theme-home-button-secondary)',
             "button-secondary-hover": 'var(--theme-home-button-secondary-hover)',
@@ -154,7 +174,9 @@ export default {
           "linear-gradient(90deg, #3D4147 0%, #2C2F35 100%)",
         "workspace-item-selected-gradient":
           "linear-gradient(90deg, #5B616A 0%, #3F434B 100%)",
-        "switch-selected": "linear-gradient(146deg, #5B616A 0%, #3F434B 100%)"
+        "switch-selected": "linear-gradient(146deg, #5B616A 0%, #3F434B 100%)",
+        // New gradient using the brand color
+        "brand-gradient": "linear-gradient(to right, theme('colors.brand.500'), theme('colors.brand.700'))",
       },
       fontFamily: {
         sans: [
@@ -179,6 +201,7 @@ export default {
         sweep: "sweep 0.5s ease-in-out",
         "pulse-glow": "pulse-glow 1.5s infinite",
         'fade-in': 'fade-in 0.3s ease-out',
+        'fade-out': 'fadeOut 0.3s ease-out forwards', // Added forwards to persist end state
         'slide-up': 'slide-up 0.4s ease-out forwards',
         'bounce-subtle': 'bounce-subtle 2s ease-in-out infinite'
       },
@@ -187,11 +210,12 @@ export default {
           "0%": { transform: "scaleX(0)", transformOrigin: "bottom left" },
           "100%": { transform: "scaleX(1)", transformOrigin: "bottom left" }
         },
-        fadeIn: {
+        // Renamed to avoid conflict with animation name if used directly
+        fadeInKeyframe: { // Or keep as 'fade-in' if you prefer, but ensure mapping is clear
           "0%": { opacity: 0 },
           "100%": { opacity: 1 }
         },
-        fadeOut: {
+        fadeOut: { // Keyframe for fade-out animation
           "0%": { opacity: 1 },
           "100%": { opacity: 0 }
         },
@@ -205,8 +229,8 @@ export default {
           "50%": {
             opacity: 1,
             transform: "scale(1.1)",
-            boxShadow: "0 0 15px rgba(255, 255, 255, 0.2)",
-            backgroundColor: "rgba(255, 255, 255, 0.1)"
+            boxShadow: "0 0 15px rgba(255, 255, 255, 0.2)", // Consider using brand color for glow
+            backgroundColor: "rgba(255, 255, 255, 0.1)" // Consider using brand color for glow
           },
           "100%": {
             opacity: 1,
@@ -215,7 +239,7 @@ export default {
             backgroundColor: "rgba(255, 255, 255, 0.0)"
           }
         },
-        'fade-in': {
+        'fade-in': { // This is the keyframe for the 'fade-in' animation
           '0%': { opacity: '0' },
           '100%': { opacity: '1' }
         },
@@ -240,30 +264,30 @@ export default {
   safelist: [
     {
       pattern:
-        /^(bg-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+        /^(bg-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|brand)-(?:50|100|200|300|400|500|600|700|800|900|950|DEFAULT))$/, // Added brand and DEFAULT
       variants: ["hover", "ui-selected"]
     },
     {
       pattern:
-        /^(text-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+        /^(text-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|brand)-(?:50|100|200|300|400|500|600|700|800|900|950|DEFAULT))$/, // Added brand and DEFAULT
       variants: ["hover", "ui-selected"]
     },
     {
       pattern:
-        /^(border-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/,
+        /^(border-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|brand)-(?:50|100|200|300|400|500|600|700|800|900|950|DEFAULT))$/, // Added brand and DEFAULT
       variants: ["hover", "ui-selected"]
     },
     {
       pattern:
-        /^(ring-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/
+        /^(ring-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|brand)-(?:50|100|200|300|400|500|600|700|800|900|950|DEFAULT))$/ // Added brand and DEFAULT
     },
     {
       pattern:
-        /^(stroke-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/
+        /^(stroke-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|brand)-(?:50|100|200|300|400|500|600|700|800|900|950|DEFAULT))$/ // Added brand and DEFAULT
     },
     {
       pattern:
-        /^(fill-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose)-(?:50|100|200|300|400|500|600|700|800|900|950))$/
+        /^(fill-(?:slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|brand)-(?:50|100|200|300|400|500|600|700|800|900|950|DEFAULT))$/ // Added brand and DEFAULT
     }
   ],
   plugins: [

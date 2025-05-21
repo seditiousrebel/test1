@@ -92,7 +92,7 @@ export function MCPServersList({
       <div className="text-theme-text-secondary text-center text-xs flex flex-col gap-y-2">
         <p>Loading MCP Servers from configuration file...</p>
         <a
-          href="https://docs.anythingllm.com/mcp-compatibility/overview"
+          href="https://docs.nytte.com/mcp-compatibility/overview"
           target="_blank"
           rel="noopener noreferrer"
           className="text-theme-text-secondary underline hover:text-cta-button"
