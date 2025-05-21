@@ -118,8 +118,7 @@ const TRANSLATIONS = {
     },
   },
   welcomeMessage: {
-    part1:
-      "Benvenuti in AnythingLLM, AnythingLLM è uno strumento di intelligenza artificiale open source di Mintplex Labs che trasforma qualsiasi cosa in un chatbot addestrato con cui puoi effettuare query e chattare. AnythingLLM è un software BYOK (bring-your-own-keys), quindi non ci sono abbonamenti, commissioni o costi per questo software al di fuori dei servizi che vuoi utilizzare.",
+    part1: "",
     part2:
       "AnythingLLM è il modo più semplice per mettere insieme potenti prodotti di intelligenza artificiale come OpenAi, GPT-4, LangChain, PineconeDB, ChromaDB e altri servizi in un pacchetto ordinato e senza problemi per aumentare la tua produttività di 100 volte.",
     part3:
@@ -135,7 +134,7 @@ const TRANSLATIONS = {
       "AnythingLLM è migliore di un Dropbox più smart.\n\nAnythingLLM offre due modi di comunicare con i tuoi dati:\n\n<i>Query:</i> Le tue chat restituiranno dati o inferenze trovate con i documenti nella tua area di lavoro a cui ha accesso. Aggiungere più documenti all'area di lavoro lo rende più intelligente! \n\n<i>Conversazionale:</i> i tuoi documenti + la cronologia delle chat in corso contribuiscono entrambi alla conoscenza dell'LLM allo stesso tempo. Ottimo per aggiungere informazioni basate su testo in tempo reale o correzioni e incomprensioni che l'LLM potrebbe avere. \n\nPuoi passare da una modalità all'altra \n<i>nel mezzo della chat!</i>",
     user3: "Wow, sembra fantastico, fammi provare!",
     part6: "Divertiti!",
-    starOnGitHub: "Metti una stella su GitHub",
+    starOnGitHub: "",
     contact: "Contatta Mintplex Labs",
   },
   "new-workspace": {
