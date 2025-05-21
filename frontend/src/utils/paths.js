@@ -54,10 +54,10 @@ export default {
     return "https://nytte.ai";
   },
   mailToMintplex: () => {
-    return "mailto:team@mintplexlabs.com";
+    return "mailto:team@nytte.ai";
   },
   hosting: () => {
-    return "https://my.mintplexlabs.com/aio-checkout?product=anythingllm";
+    return "https://nytte.ai";
   },
   workspace: {
     chat: (slug, options = {}) => {
