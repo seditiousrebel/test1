@@ -307,7 +307,7 @@ export const VECTOR_DB_PRIVACY = {
   lancedb: {
     name: "LanceDB",
     description: [
-      "Your vectors and document text are stored privately on this instance of AnythingLLM",
+      "Your vectors and document text are stored privately on this instance of nytte",
     ],
     logo: LanceDbLogo,
   },

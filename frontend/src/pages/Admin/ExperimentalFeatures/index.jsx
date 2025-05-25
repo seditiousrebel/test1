@@ -246,14 +246,14 @@ function FeatureVerification({ children }) {
                     Access to any features requires approval of this modal. If
                     you would like to read more you can refer to{" "}
                     <a
-                      href="https://docs.anythingllm.com/beta-preview/overview"
+                      href="https://nytte.ai/beta-preview/overview"
                       className="underline text-blue-500"
                     >
-                      docs.anythingllm.com
+                      nytte.ai
                     </a>{" "}
                     or email{" "}
                     <a
-                      href="mailto:team@mintplexlabs.com"
+                      href="mailto:team@nytte.ai"
                       className="underline text-blue-500"
                     >
                       team@mintplexlabs.com

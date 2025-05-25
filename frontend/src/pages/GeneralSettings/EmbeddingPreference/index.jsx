@@ -40,12 +40,12 @@ import MistralAiOptions from "@/components/EmbeddingSelection/MistralAiOptions";
 
 const EMBEDDERS = [
   {
-    name: "AnythingLLM Embedder",
+    name: "nytte Embedder",
     value: "native",
     logo: AnythingLLMIcon,
     options: (settings) => <NativeEmbeddingOptions settings={settings} />,
     description:
-      "Use the built-in embedding provider for AnythingLLM. Zero setup!",
+      "Use the built-in embedding provider for nytte. Zero setup!",
   },
   {
     name: "OpenAI",

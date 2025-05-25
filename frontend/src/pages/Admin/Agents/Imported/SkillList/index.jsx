@@ -13,11 +13,11 @@ export default function ImportedSkillList({
         <p>
           Learn about agent skills in the{" "}
           <a
-            href="https://docs.anythingllm.com/agent/custom/developer-guide"
+            href="https://nytte.ai/agent/custom/developer-guide"
             target="_blank"
             className="text-theme-text-secondary underline hover:text-cta-button"
           >
-            AnythingLLM Agent Docs
+            nytte Agent Docs
           </a>
           .
         </p>

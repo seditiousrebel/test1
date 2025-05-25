@@ -45,19 +45,19 @@ export default {
     },
   },
   github: () => {
-    return "https://github.com/Mintplex-Labs/anything-llm";
+    return null;
   },
   discord: () => {
-    return "https://discord.com/invite/6UyHPeGZAC";
+    return null; // Or simply remove this function if not used elsewhere
   },
   docs: () => {
-    return "https://docs.anythingllm.com";
+    return "https://nytte.ai";
   },
   mailToMintplex: () => {
-    return "mailto:team@mintplexlabs.com";
+    return "mailto:team@nytte.ai";
   },
   hosting: () => {
-    return "https://my.mintplexlabs.com/aio-checkout?product=anythingllm";
+    return "https://nytte.ai";
   },
   workspace: {
     chat: (slug, options = {}) => {
@@ -196,7 +196,7 @@ export default {
       return `${this.website()}/me`;
     },
     noPrivateItems: () => {
-      return "https://docs.anythingllm.com/community-hub/faq#no-private-items";
+      return "https://nytte.ai/community-hub/faq#no-private-items";
     },
   },
 
